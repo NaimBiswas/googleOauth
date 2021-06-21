@@ -1,9 +1,13 @@
 import './App.css';
 import { GoogleLogin } from 'react-google-login';
+import FacebookLogin from 'react-facebook-login';
 function App() {
 
    const responseGoogle = (response) => {
       console.log(response.profileObj);
+   }
+   const responseFacebook = (response) => {
+      console.log(response);
    }
    return (
 
@@ -16,6 +20,28 @@ function App() {
             isSignedIn={true}
             cookiePolicy={'single_host_origin'}
          />
+
+
+
+
+
+
+
+
+         {/* facebook login  */}
+
+         <FacebookLogin
+            appId="198912365447335"
+            autoLoad={true}
+            fields="name,email,picture"
+            callback={responseFacebook} />
+
+);
+
+
+
+
+
       </div>
    );
 }
